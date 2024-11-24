@@ -1,0 +1,3 @@
+square(X):-
+    y is X*X,
+    write(Y).

@@ -1,0 +1,7 @@
+print(1):-
+    write(1).
+print(X):-
+    nl,
+    write(X),
+    Y is X-1,
+    print(Y).
