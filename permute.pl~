@@ -1,0 +1,4 @@
+permute([], []).                    % Base case: the permutation of an empty list is an empty list.
+permute(List, [Head|Tail]) :-       % Head is the first element in the permutation.
+    select(Head, List, Rest),       % Select an element (Head) from List, leaving Rest.
+    permute(Rest, Tail).
