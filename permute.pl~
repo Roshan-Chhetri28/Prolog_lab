@@ -1,4 +1,13 @@
-permute([], []).                    % Base case: the permutation of an empty list is an empty list.
-permute(List, [Head|Tail]) :-       % Head is the first element in the permutation.
-    select(Head, List, Rest),       % Select an element (Head) from List, leaving Rest.
+permute([], []).
+permute(L, [Head|Tail]):-
+    select(Head, L, Rest),
     permute(Rest, Tail).
+list_len([], 0).
+list_len([_|Tail], L):-
+    list_len(Tail, L1),
+    L is L1+1.
+list_sum([], 0).
+
+list_sum([Head|Tail], Sum):-
+    list_sum(Tail, Sum),
+    Sum is Head+Sum.

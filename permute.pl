@@ -1,4 +1,13 @@
 permute([], []).
-permute(List, [Head|Tail]):-
-    select(Head, List, Rest),
+permute(L, [Head|Tail]):-
+    select(Head, L, Rest),
     permute(Rest, Tail).
+list_len([], 0).
+list_len([_|Tail], L):-
+    list_len(Tail, L1),
+    L is L1+1.
+list_sum([], 0).
+
+list_sum([Head|Tail], Sum):-
+    list_sum(Tail, Sum1),
+    Sum is Head+Sum1.
